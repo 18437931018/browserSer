@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>browserSer</title>
+</head>
+
+<body>
+  <h5>同时开启多个服务请保证每次的端口不能相同</h5>
+  <button id="selectDirBtn" style="width:120px;height:20px">选择项目目录</button>
+  <div id="selected-file"></div>
+  <div>
+    选择端口：<input type="text" value="3000" id="port">
+  </div>
+  <button id="start">开始</button>
+  <div id="msg"></div>
+</body>
+
+<script>
+  const fs = require('fs');
+  const ipc = require('electron').ipcRenderer;
+  const server = require('./server.js');
+  const selectDirBtn = document.getElementById('selectDirBtn')
+  const port = document.getElementById('port');
+  let selectDir = '';
+  document.getElementById('start').addEventListener('click', function (event) {
+    server(selectDir, +port.value)
+    document.getElementById('msg').innerHTML = '请在浏览器打开<p>http://localhost:' + port.value + '/index.html</p>'
+  })
+  selectDirBtn.addEventListener('click', function (event) {
+    ipc.send('open-directory-dialog')
+  })
+  ipc.on('selected-directory', function (event, path) {
+    selectDir = `${path}`
+    document.getElementById('selected-file').innerHTML = `You selected: ${path}`
+  })
+</script>
+
+</html>

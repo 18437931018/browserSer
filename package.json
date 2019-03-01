@@ -1,0 +1,26 @@
+{
+  "name": "browserser",
+  "version": "1.0.0",
+  "description": "静态服务器",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . browserSer --win --out ./browserSer --arch=x64  --electron-version=3.0.0 --icon=./icon.ico ignore=node_modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/18437931018/browserSer.git"
+  },
+  "keywords": [
+    "no"
+  ],
+  "author": "weiyh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/18437931018/browserSer/issues"
+  },
+  "homepage": "https://github.com/18437931018/browserSer#readme",
+  "devDependencies": {
+    "electron": "^4.0.6"
+  }
+}
