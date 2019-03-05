@@ -26,7 +26,7 @@ const mime = {
     "wmv": "video/x-ms-wmv",
     "xml": "text/xml"
 };
-const specialExt = ['png', 'jpg', 'mp3', 'wav'];
+const specialExt = ['png', 'jpg', 'mp3', 'wav', 'gif'];
 
 
 function start(selectDir, selectPort) {
