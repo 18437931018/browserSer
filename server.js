@@ -22,11 +22,12 @@ const mime = {
     "txt": "text/plain",
     "wav": "audio/x-wav",
     "mp3": "audio/mpeg",
+    "m4a": "audio/mp4a-latm",
     "wma": "audio/x-ms-wma",
     "wmv": "video/x-ms-wmv",
     "xml": "text/xml"
 };
-const specialExt = ['png', 'jpg', 'mp3', 'wav', 'gif'];
+const specialExt = ['png', 'jpg', 'mp3', 'wav', 'gif', 'm4a'];
 
 
 function start(selectDir, selectPort) {
